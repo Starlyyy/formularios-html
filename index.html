@@ -55,10 +55,10 @@
             transition: all 0.5s;
         }
 
-        input:focus{
+        /* input:focus{
             background: orchid;
             width: 250px;
-        }
+        } */
 
         input[type="submit"] {
             width: 200px;
@@ -92,10 +92,10 @@
 <body>
 
     <h1>Formulários</h1>
-
+    
     <h2>Elemento input</h2>
 
-    <form action="processa_formulario.php" method="get">
+    <form action="processa_formulario.php" method="post" enctype="multipart/form-data">
 
         <div class="form-group">
             <label for="campo_nome">nome:</label>
@@ -138,22 +138,22 @@
 
         <div class="form-group">
             <label for="id_prato">
-                Prato prin. <input type="checkbox" value="prato_principal" id="id_prato" name="opcoes" checked>
+                Prato prin. <input type="checkbox" value="prato_principal" id="id_prato" name="opcoes[]" checked>
             </label>
             
             <label for="">
-                Salada <input type="checkbox" value="salada" name="opcoes">
+                Salada <input type="checkbox" value="salada" name="opcoes[]">
             </label>
 
             <label for="">
-                Sobremesa <input type="checkbox" value="sobremesa" name="opcoes">
+                Sobremesa <input type="checkbox" value="sobremesa" name="opcoes[]">
             </label>
 
         </div>
 
         <div class="form-group">
             
-            <select name="cor_favorita" id="cor-favorita" required>
+            <select name="cor_favorita" id="cor-favorita">
                 <option value="">selecione uma opção</option>
                 
                 <option value="opcao_verde">Verde</option>
